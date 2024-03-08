@@ -11,11 +11,12 @@ public class ManagingAnchorsAtEventsSolutionApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ManagingAnchorsAtEventsSolutionApplication.class, args);
 	}
-	
+
 	@Bean
-    public CommandLineRunner commandLineRunner(EventMasterApp eventMasterApp) {
-		// your code goes here
-		return null;
-    }
+	public CommandLineRunner commandLineRunner(EventMasterApp eventMasterApp) {
+		return args -> {
+			eventMasterApp.start();
+		};
+	}
 
 }
